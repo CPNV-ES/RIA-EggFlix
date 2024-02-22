@@ -43,17 +43,14 @@ To deploy the project first copy the project to the proper folder then duplicate
 update it with your environment's values.
 
 ## Directory structure
-
-* Tip: try the tree bash command
-
 ```shell
-├───Docs                            
-└───src                                    
-    ├───bin
-    │   └───Debug
-    └───obj
-        └───Debug
-├───test                      //test classes
+├───doc                     //Documentation
+├───public                  //Web files (including the index.html at root)
+│   ├───css
+│   ├───imgs
+│   ├───js                  //Our JS source files
+│   └───vendors             //Third party JS
+├───test                    //Test classes
 ```
 
 ## Collaborate
@@ -65,7 +62,7 @@ update it with your environment's values.
 
   * Propose a new feature in [icescrum](...) 
     * We only use technical stories
-  * Pull requests are oppe to merge in the develop branch.
+  * Pull requests are open to merge in the develop branch.
   * Release on the main branch we use GitFlow and not with GitHub release.
   * Issues are added to the [github issues page](https://github.com/JuilletMikael/RIA-EggFlix/issues)
 
