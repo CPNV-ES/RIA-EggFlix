@@ -40,13 +40,9 @@ h2 {
     -webkit-box-shadow: none;
     box-shadow: none; }
 
-.half .bg {
+.fullscreen-background {
   background-size: cover;
   background-position: center; }
-
-.half a {
-  color: #888;
-  text-decoration: underline; }
 
 .half .btn {
   padding-left: 30px;
