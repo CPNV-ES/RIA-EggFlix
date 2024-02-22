@@ -11,7 +11,9 @@ This project is designed to rent online movies and the main features are renting
 List all dependencies and their version needed by the project as :
 
 * IDE used PhpStorm 2023.3 or Webstorm 2023.3
-* Package manager npm
+* npm 10.4.0 ou ultérieure [official doc](https://docs.npmjs.com/try-the-latest-stable-version-of-npm)
+* node v20.11.0 ou ultérieure [official doc][https://nodejs.org/en/download]
+* git version 2.43.0.windows ou ultérieure [official doc](https://git-scm.com/)
 * OS supported Windows 10
 
 ### Configuration
@@ -21,9 +23,12 @@ All data are saved in a google sheet, and so there's no configuration to do on o
 ## Deployment
 
 ### On dev environment
+Install packages
+```shell
+npm install
+```
 
-How to get dependencies and build?
-How to run the tests?
+For now, there is no need to build the project.
 
 We are using [Jest](https://jestjs.io/) as a testing framework.
 
