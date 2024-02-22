@@ -1,0 +1,25 @@
+{
+  "name": "ria-eggflix",
+  "version": "1.0.0",
+  "description": "RIA module, rent online movies.",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuilletMikael/RIA-EggFlix.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuilletMikael/RIA-EggFlix/issues"
+  },
+  "homepage": "https://github.com/JuilletMikael/RIA-EggFlix#readme"
+}
