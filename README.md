@@ -60,7 +60,7 @@ update it with your environment's values.
   * [How to commit](https://www.conventionalcommits.org/en/v1.0.0/)
   * [How to use your workflow](https://nvie.com/posts/a-successful-git-branching-model/)
 
-  * Propose a new feature in [icescrum](...) 
+  * Propose a new feature in [icescrum](https://icescrum.cpnv.ch/p/RIAEGGFLIX/#/planning) 
     * We only use technical stories
   * Pull requests are open to merge in the develop branch.
   * Release on the main branch we use GitFlow and not with GitHub release.
