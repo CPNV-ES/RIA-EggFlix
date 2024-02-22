@@ -53,16 +53,11 @@ update it with your environment's values.
 
 ## Collaborate
 
-* Take time to read some readme and find the way you would like to help other developers collaborate with you.
-
-* They need to know:
-  * How to propose a new feature (issue, pull request)
+* Workflow
+  * [Gitflow](https://www.atlassian.com/fr/git/tutorials/comparing-workflows/gitflow-workflow#:~:text=Gitflow%20est%20l'un%20des,les%20hotfix%20vers%20la%20production.)
   * [How to commit](https://www.conventionalcommits.org/en/v1.0.0/)
   * [How to use your workflow](https://nvie.com/posts/a-successful-git-branching-model/)
 
-* Workflow
-  * [Gitflow](https://www.atlassian.com/fr/git/tutorials/comparing-workflows/gitflow-workflow#:~:text=Gitflow%20est%20l'un%20des,les%20hotfix%20vers%20la%20production.)
-  * [Commits](https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13)
   * Propose a new feature in [icescrum](...) 
     * We only use technical stories
   * Pull requests are oppe to merge in the develop branch.
