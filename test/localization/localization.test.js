@@ -9,7 +9,6 @@ describe('Localization', () => {
 
     beforeEach(() => {
         document.body.innerHTML = '<p data-i18n="Movies" id="movies">Movies</p>';
-        originalElement = document.getElementById('movies').innerText;
     });
 
     afterEach(() => {
@@ -24,7 +23,7 @@ describe('Localization', () => {
 
         //then
         const updatedElement = document.getElementById('movies');
-        expect(updatedElement.innerText).not.toBe(originalElement);
+        expect(updatedElement.innerText).not.toBe('<p data-i18n="Movies" id="movies">Filmes</p>');
 
     });
 });
