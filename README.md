@@ -20,6 +20,10 @@ List all dependencies and their version needed by the project as :
 
 All data are saved in a google sheet, and so there's no configuration to do on our side except for accesses in an .env file.
 
+### Naming conventions
+
+We use the [W3Schools Naming Conventions](https://www.w3schools.com/js/js_conventions.asp) for all our code base.
+
 ## Deployment
 
 ### On dev environment
