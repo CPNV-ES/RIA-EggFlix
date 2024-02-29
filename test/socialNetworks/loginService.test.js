@@ -2,26 +2,26 @@ const LoginService = require("../../public/js/socialNetworks/loginService.js");
 const FacebookLogin = require("../../public/js/socialNetworks/facebookLogin.js");
 
 describe('Login Service', () => {
-    test('User can login with Facebook', () => {
+    test('User can login with Facebook', async () => {
         //Given
         const fbLogin = new FacebookLogin();
         const service = new LoginService([fbLogin]);
         //The following line simulate the importation of Facebook SDK in a <script> component
         require("./facebookSdkStub.js");
         //When
-        service.login('facebook')
+        await service.login('facebook')
         //Then
-        expect(service.isConnected()).toBe(true);
+        expect(await service.isConnected()).toBe(true);
     });
-    test('User can logout', () => {
+    test('User can logout', async () => {
         //Given
         const fbLogin = new FacebookLogin();
         const service = new LoginService([fbLogin]);
         require("./facebookSdkStub.js");
-        service.login('facebook')
+        await service.login('facebook')
         //When
-        service.logout();
+        await service.logout();
         //Then
-        expect(service.isConnected()).toBe(false);
+        expect(await service.isConnected()).toBe(false);
     });
 });

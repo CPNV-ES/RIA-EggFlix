@@ -2,15 +2,15 @@ module.exports = class LoginService{
     constructor(socialLoginList) {
     }
 
-    login(serviceName){
+    async login(serviceName){
 
     }
 
-    isConnectedToAny(){
+    async isConnectedToAny(){
 
     }
 
-    logoutFromAll(){
+    async logoutFromAll(){
 
     }
 }

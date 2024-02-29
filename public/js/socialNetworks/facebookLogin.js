@@ -2,13 +2,13 @@ module.exports = class FacebookLogin {
     constructor() {
 
     }
-    isConnected(){
+    async isConnected(){
 
     }
-    login(){
+    async login(){
 
     }
-    logout(){
+    async logout(){
 
     }
     getSocialNetworkName(){
