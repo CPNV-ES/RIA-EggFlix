@@ -1,0 +1,30 @@
+@startuml Class Diagram
+skinparam classAttributeIconSize 0
+
+/'
+Class Diagram for the login with socials medias / auth system for EggFlix
+'/
+
+interface SocialLogin{
+    + isConnected() : boolean
+    + login() : boolean
+    + logout() : void
+    + getSocialNetworkName() : string
+}
+
+note top: To simplify class diagram, the social login process result is synchronous.
+
+class FacebookLogin implements SocialLogin{
+
+}
+
+class LoginController{
+    - socialNetworksLogin : ISocialLogin[]
+    - findSocialLoginByName(name : string) : SocialLogin
+    + login(serviceName : string) : boolean
+    + isConnectedToAny() : boolean
+    + logoutFromAll() : void
+}
+'LoginController needs some SocialLogin to live
+LoginController *-- SocialLogin
+@enduml
