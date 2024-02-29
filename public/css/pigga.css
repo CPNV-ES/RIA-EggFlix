@@ -11088,7 +11088,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ae7f41;
+  background: var(--red);
   border-radius: 20px;
 }
 
