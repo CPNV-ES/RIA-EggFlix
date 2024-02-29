@@ -6,7 +6,7 @@ describe('Login Service', () => {
     beforeEach(() => {
         global.FB = FB;
     });
-    test('User can login with Facebook', async () => {
+    test('login_WithFaceBook_isConnected', async () => {
         //Given
         const fbLogin = new FacebookLogin();
         const service = new LoginService([fbLogin]);
@@ -16,7 +16,7 @@ describe('Login Service', () => {
         //Then
         expect(await service.isConnectedToAny()).toBe(true);
     });
-    test('User can logout', async () => {
+    test('logout_NominalCase_isNotConnected', async () => {
         //Given
         const fbLogin = new FacebookLogin();
         const service = new LoginService([fbLogin]);
