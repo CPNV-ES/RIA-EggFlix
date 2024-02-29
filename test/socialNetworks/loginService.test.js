@@ -10,11 +10,22 @@ describe('Login Service', () => {
         //Given
         const fbLogin = new FacebookLogin();
         const service = new LoginService([fbLogin]);
-        FB.onStubLoaded()
+        FB.onStubLoaded();
         //When
         await service.login('facebook')
         //Then
         expect(await service.isConnectedToAny()).toBe(true);
+    });
+    test('login_WithFaceBookCanceled_isNotConnected', async () => {
+        //Given
+        const fbLogin = new FacebookLogin();
+        const service = new LoginService([fbLogin]);
+        FB.onStubLoaded();
+        FB.isStubWorking = false;
+        //When
+        await service.login('facebook')
+        //Then
+        expect(await service.isConnectedToAny()).toBe(false);
     });
     test('logout_NominalCase_isNotConnected', async () => {
         //Given
