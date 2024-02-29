@@ -1,13 +1,16 @@
 const LoginService = require("../../public/js/socialNetworks/loginService.js");
 const FacebookLogin = require("../../public/js/socialNetworks/facebookLogin.js");
+const FB = require("./facebookSdkStub.js");
 
 describe('Login Service', () => {
+    beforeEach(() => {
+        global.FB = FB;
+    });
     test('User can login with Facebook', async () => {
         //Given
         const fbLogin = new FacebookLogin();
         const service = new LoginService([fbLogin]);
-        //The following line simulate the importation of Facebook SDK in a <script> component
-        require("./facebookSdkStub.js");
+        FB.onStubLoaded()
         //When
         await service.login('facebook')
         //Then
@@ -17,7 +20,7 @@ describe('Login Service', () => {
         //Given
         const fbLogin = new FacebookLogin();
         const service = new LoginService([fbLogin]);
-        require("./facebookSdkStub.js");
+        FB.onStubLoaded()
         await service.login('facebook')
         //When
         await service.logoutFromAll();

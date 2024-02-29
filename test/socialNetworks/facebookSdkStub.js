@@ -1,7 +1,8 @@
-class FB{
+module.exports = class FB{
     static isStubWorking = true;
+    static isInit = false;
     static init(configuration){
-
+        FB.isInit = true;
     }
     static login(response){
         response(FB.#generateMockStatusResponse());
@@ -11,6 +12,9 @@ class FB{
     }
     static logout(response){
         response();
+    }
+    static onStubLoaded(){
+        window.fbAsyncInit();
     }
     static #generateMockStatusResponse(){
         return FB.isStubWorking ?
@@ -28,4 +32,3 @@ class FB{
             };
     }
 }
-window.fbAsyncInit();
