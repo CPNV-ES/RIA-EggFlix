@@ -11,7 +11,7 @@ describe('Login Service', () => {
         //When
         await service.login('facebook')
         //Then
-        expect(await service.isConnected()).toBe(true);
+        expect(await service.isConnectedToAny()).toBe(true);
     });
     test('User can logout', async () => {
         //Given
@@ -20,8 +20,8 @@ describe('Login Service', () => {
         require("./facebookSdkStub.js");
         await service.login('facebook')
         //When
-        await service.logout();
+        await service.logoutFromAll();
         //Then
-        expect(await service.isConnected()).toBe(false);
+        expect(await service.isConnectedToAny()).toBe(false);
     });
 });
