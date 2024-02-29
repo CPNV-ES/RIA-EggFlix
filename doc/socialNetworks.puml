@@ -18,13 +18,13 @@ class FacebookLogin implements SocialLogin{
 
 }
 
-class LoginController{
+class LoginService{
     - socialNetworksLogin : ISocialLogin[]
     - findSocialLoginByName(name : string) : SocialLogin
     + login(serviceName : string) : boolean
     + isConnectedToAny() : boolean
     + logoutFromAll() : void
 }
-'LoginController needs some SocialLogin to live
-LoginController *-- SocialLogin
+'LoginService needs some SocialLogin to live
+LoginService *-- SocialLogin
 @enduml
