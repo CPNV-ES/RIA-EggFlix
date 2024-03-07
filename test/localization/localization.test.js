@@ -5,6 +5,7 @@
  * @version   29-02-2024 - original
  */
 
+const {Builder} = require("selenium-webdriver");
 describe('Localization', () => {
 
     beforeEach(() => {
@@ -13,6 +14,21 @@ describe('Localization', () => {
 
     afterEach(() => {
         document.body.innerHTML = '';
+    });
+
+    test('User can change localization in french', async () => {
+        //given
+        let driver = await new Builder().forBrowser('chrome').build();
+
+        //when
+        await driver.get('file://C:\\Users\\pi84kwa\\Desktop\\CPNV\\RIA-EggFlix\\test\\localization\\localize.html');
+        let title = await driver.getTitle();
+
+        //then
+        await driver.quit();
+        expect("hssss").not.toBe('<p data-i18n="Movies" id="movies">Filmes</p>');
+
+
     });
 
     test('User can change localization in french', () => {
