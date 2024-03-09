@@ -5,41 +5,33 @@
  * @version   29-02-2024 - original
  */
 
-const {Builder} = require("selenium-webdriver");
+const {Builder, By, Key, until} = require("selenium-webdriver");
 describe('Localization', () => {
 
-    beforeEach(() => {
-        document.body.innerHTML = '<p data-i18n="Movies" id="movies">Movies</p>';
+    let driver;
+    beforeEach(async () => {
+        driver = await new Builder().forBrowser('chrome').build();
+        await driver.get("file://" + process.cwd() + "/public/index.html");
     });
 
-    afterEach(() => {
-        document.body.innerHTML = '';
-    });
-
-    test('User can change localization in french', async () => {
-        //given
-        let driver = await new Builder().forBrowser('chrome').build();
-
-        //when
-        await driver.get('file://C:\\Users\\pi84kwa\\Desktop\\CPNV\\RIA-EggFlix\\test\\localization\\localize.html');
-        let title = await driver.getTitle();
-
-        //then
+    afterEach(async () => {
         await driver.quit();
-        expect("hssss").not.toBe('<p data-i18n="Movies" id="movies">Filmes</p>');
-
-
     });
 
-    test('User can change localization in french', () => {
+    test('Welcome text change in french by changing localization', async () => {
         //given
+        //get the welcome dom element by id
+        const welcomeElement = await driver.findElement(By.id('welcome'));
+        const welcomeMessageBefore = await welcomeElement.getText();
 
         //when
-        changeLanguage('fr');
+        //click on the button to change localization
+        await driver.findElement(By.id('changeLocalizeFr')).click;
 
         //then
-        const updatedElement = document.getElementById('movies');
-        expect(updatedElement.innerText).not.toBe('<p data-i18n="Movies" id="movies">Filmes</p>');
+        //get the message after being changed
+        const welcomeMessageAfter = await welcomeElement.getText();
 
+        expect(welcomeMessageBefore).not.toBe(welcomeMessageAfter);
     });
 });
