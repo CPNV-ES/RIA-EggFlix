@@ -77,6 +77,25 @@ update it with your environment's values.
 We use [Gitflow](https://www.atlassian.com/fr/git/tutorials/comparing-workflows/gitflow-workflow) branching strategy with snake_case naming based on the names of stories in IceScrum.
 Example : Story is named 'BDD_Localization' so the branch will be 'bdd_localization'.
 
+### Naming conventions
+We are using [JavaScript Style Guide from W3Scools](https://www.w3schools.com/js/js_conventions.asp)
+
+### Tests naming conventions
+We are using [A guide to unit testing in JavaScript](https://github.com/mawrkus/js-unit-testing-guide) using Jest.
+We try to stick to 'given when then' approach with the 'it()' method' provided by Jest.
+
+Example :
+```javascript
+describe("The Gallery instance", () => {
+  describe("when initialized", () => {
+    it("calculates the thumb size", () => {});
+    it("calculates the thumbs count", () => {});
+  
+    // ...
+    });
+});
+```
+
 ## License
 [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/80x15.png)](https://creativecommons.org/licenses/by/4.0/)
 
