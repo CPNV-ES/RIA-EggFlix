@@ -12,7 +12,7 @@ List all dependencies and their version needed by the project as :
 
 * IDE used PhpStorm 2023.3 or Webstorm 2023.3
 * npm 10.4.0 ou ultérieure [official doc](https://docs.npmjs.com/try-the-latest-stable-version-of-npm)
-* node v20.11.0 ou ultérieure [official doc][https://nodejs.org/en/download]
+* node v20.11.0 ou ultérieure [official doc](https://nodejs.org/en/download)
 * git version 2.43.0.windows ou ultérieure [official doc](https://git-scm.com/)
 * OS supported Windows 10
 
@@ -65,6 +65,10 @@ update it with your environment's values.
   * Pull requests are open to merge in the develop branch.
   * Release on the main branch we use GitFlow and not with GitHub release.
   * Issues are added to the [github issues page](https://github.com/JuilletMikael/RIA-EggFlix/issues)
+
+### Branching strategy
+We use [Gitflow](https://www.atlassian.com/fr/git/tutorials/comparing-workflows/gitflow-workflow) branching strategy with snake_case naming based on the names of stories in IceScrum.
+Example : Story is named 'BDD_Localization' so the branch will be 'bdd_localization'.
 
 ## License
 
