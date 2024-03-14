@@ -9422,4 +9422,8 @@ section.has-img-bg:after {
   margin-bottom: 15px;
 }
 
+.sticky-top {
+  z-index: 2000;
+}
+
 /*# sourceMappingURL=app.css.map */
