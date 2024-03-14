@@ -1,37 +1,54 @@
-/**
- * @file      localization.test.js
- * @brief     This class is designed to test the behaviour of a localization.
- * @author    Created by Mikael Juillet
- * @version   29-02-2024 - original
- */
+import UserExperience from "../userExperience";
 
-const {Builder, By, Key, until} = require("selenium-webdriver");
 describe('Localization', () => {
 
-    let driver;
+    let navigator;
     beforeEach(async () => {
-        driver = await new Builder().forBrowser('chrome').build();
-        await driver.get("file://" + process.cwd() + "/public/index.html");
+        navigator = new UserExperience();
+        await navigator.setupDriver();
     });
 
     afterEach(async () => {
-        await driver.quit();
+        await navigator.releaseDriver();
     });
 
-    test('Welcome text change in french by changing localization', async () => {
-        //given
-        //get the welcome dom element by id
-        const welcomeElement = await driver.findElement(By.id('welcome'));
-        const welcomeMessageBefore = await welcomeElement.getText();
+    describe('when change language in french', () => {
+        it('should change login button', async () => {
+            //given
+            //when
+            navigator.clickOnFrenchLocalizationButton();
 
-        //when
-        //click on the button to change localization
-        await driver.findElement(By.id('changeLocalizeFr')).click;
+            //then
+            const loginButtonText = navigator.loginLinkText()
 
-        //then
-        //get the message after being changed
-        const welcomeMessageAfter = await welcomeElement.getText();
+            expect('Anmeldung').toBe(loginButtonText);
+        });
+    })
 
-        expect(welcomeMessageBefore).not.toBe(welcomeMessageAfter);
-    });
+    describe('when change language in english', () => {
+        it('should change login button', async () => {
+            //given
+            //when
+            navigator.clickOnEnglishLocalizationButton();
+
+            //then
+            const loginButtonText = navigator.loginLinkText()
+
+            expect('Login').toBe(loginButtonText);
+        });
+    })
+
+    describe('when change language in german', () => {
+        it('should change login button', async () => {
+            //given
+            //when
+            navigator.clickOnGermanLocalizationButton();
+
+            //then
+            const loginButtonText = navigator.loginLinkText()
+
+            expect('Anmeldung').toBe(loginButtonText);
+        });
+    })
+
 });
