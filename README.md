@@ -10,7 +10,7 @@ This project is designed to rent online movies and the main features are renting
 
 List all dependencies and their version needed by the project as :
 
-* IDE used PhpStorm 2023.3 or Webstorm 2023.3
+* IDE used [PhpStorm 2023.3](https://www.jetbrains.com/phpstorm/) or Webstorm 2023.3
 * npm 10.4.0 ou ultérieure [official doc](https://docs.npmjs.com/try-the-latest-stable-version-of-npm)
 * node v20.11.0 ou ultérieure [official doc](https://nodejs.org/en/download)
 * git version 2.43.0.windows ou ultérieure [official doc](https://git-scm.com/)
