@@ -37,6 +37,11 @@ This command will run all the tests
 npm test
 ```
 
+You can also choose to run a single test using the following command example :
+```shell
+jest -t 'login_WithFaceBook_isConnected'
+```
+
 ### On integration environment
 
 To deploy the project first copy the project to the proper folder then duplicate the .env.example to .env and 
