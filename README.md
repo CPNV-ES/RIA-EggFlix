@@ -37,6 +37,14 @@ This command will run all the tests
 npm test
 ```
 
+We are using [Sass](https://sass-lang.com/) for the site styling. 
+The Scss files in the scss/pigga folder should not be modify ! 
+All overrides should be applied in a scss file and import the file inside app.scss.
+```
+npm run sass
+```
+
+
 ### On integration environment
 
 To deploy the project first copy the project to the proper folder then duplicate the .env.example to .env and 
