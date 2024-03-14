@@ -39,10 +39,19 @@ module.exports = class UserExperience{
         return "index.html";
     }
 
+    async isErrorBoxDisplayed() {
+        return await this.#getErrorBox().isDisplayed();
+    }
+
     async #getLoginLinkButton(){
         return await this.#driver.findElement(By.id('loginButton'));
     }
+
     async #getLoginWithFacebookButton(){
         return await this.#driver.findElement(By.id('loginFacebook'));
+    }
+
+    async #getErrorBox(){
+        return await this.#driver.findElement(By.id('errorBox'));
     }
 }
