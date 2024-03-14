@@ -78,8 +78,20 @@ We use [Gitflow](https://www.atlassian.com/fr/git/tutorials/comparing-workflows/
 Example : Story is named 'BDD_Localization' so the branch will be 'bdd_localization'.
 
 ## License
+[![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/80x15.png)](https://creativecommons.org/licenses/by/4.0/)
 
-* [jetbrain](/docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/https://www.jetbrains.com/)
+You are free to copy and redistribute the material in any medium or format for any purpose, even commercially. You can also adapt it, transform it or remit it.
+You just need to give the appropriate credit.
+```markdown
+Example in markdown
+[EggFlix](https://github.com/CPNV-RIA1/RIA-EggFlix)
+```
+
+## Credits
+### CC-BY
+[Login Form V05 - Colorlib](https://colorlib.com/wp/template/login-form-05/)
+### MIT
+[PIGGA FREE CSS TEMPLATE - Free CSS](https://www.free-css.com/free-css-templates/page277/pigga)
 
 ## Contact
 
