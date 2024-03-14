@@ -51,6 +51,8 @@ update it with your environment's values.
 │   ├───js                  //Our JS source files
 │   └───vendors             //Third party JS
 ├───test                    //Test classes
+├───package.json            //Describe the project dependendies
+├───README.md               //This file (must be at root)
 ```
 
 ## Collaborate
