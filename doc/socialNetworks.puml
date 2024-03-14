@@ -27,4 +27,12 @@ class LoginService{
 }
 'LoginService needs some SocialLogin to live
 LoginService *-- SocialLogin
+
+class LoginController{
+    - service : LoginService[]
+    + onClickOnLoginLink() : void
+    + onClickOnLoginButton(serviceName : string) : void
+}
+
+LoginController *-- LoginService
 @enduml
