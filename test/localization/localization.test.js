@@ -23,6 +23,17 @@ describe('Localization', () => {
 
             expect('Anmeldung').toBe(loginButtonText);
         });
+
+        it('should not expand slogan title height size', async () => {
+            //given
+            //when
+            navigator.clickOnFrenchLocalizationButton();
+
+            //then
+            const sloganTitleSize = navigator.getSloganTitleSize()
+
+            expect(sloganTitleSize.height).toBeGreaterThan(40);
+        });
     })
 
     describe('when change language in english', () => {
@@ -36,6 +47,17 @@ describe('Localization', () => {
 
             expect('Login').toBe(loginButtonText);
         });
+
+        it('should not expand slogan title height size', async () => {
+            //given
+            //when
+            navigator.clickOnEnglishLocalizationButton();
+
+            //then
+            const sloganTitleSize = navigator.getSloganTitleSize()
+
+            expect(sloganTitleSize.height).toBeGreaterThan(40);
+        });
     })
 
     describe('when change language in german', () => {
@@ -48,6 +70,17 @@ describe('Localization', () => {
             const loginButtonText = navigator.loginLinkText()
 
             expect('Anmeldung').toBe(loginButtonText);
+        });
+
+        it('should not expand slogan title height size', async () => {
+            //given
+            //when
+            navigator.clickOnGermanLocalizationButton();
+
+            //then
+            const sloganTitleSize = navigator.getSloganTitleSize()
+
+            expect(sloganTitleSize.height).toBeGreaterThan(40);
         });
     })
 
