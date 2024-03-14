@@ -39,6 +39,10 @@ module.exports = class UserExperience{
         return "index.html";
     }
 
+    executeScript(script){
+        return this.#driver.executeScript(script)
+    }
+
     async isErrorBoxDisplayed() {
         return await this.#getErrorBox().isDisplayed();
     }

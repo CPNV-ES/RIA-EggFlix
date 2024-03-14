@@ -39,7 +39,10 @@ describe('Login Story', () => {
             it('should display error message and not redirect', async () => {
                 //Given
                 await navigator.goToPage(navigator.getLoginRoute());
-                //TODO : Disable the mock working
+                navigator.executeScript(()=>{
+                    //Set the mock to send error response
+                    FB.isStubWorking = false
+                })
                 //When
                 await navigator.clickOnLoginWithFacebook();
                 //Then
