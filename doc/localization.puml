@@ -1,0 +1,23 @@
+@startuml Class Diagram
+skinparam classAttributeIconSize 0
+
+/'
+Class Diagram for the localization system for EggFlix
+'/
+
+class LocalizationService {
+    - language : string
+    + getLanguage() : string
+    + setLanguage() : void
+    + changeLanguage(language : string) : void
+    + translate(translateValue : string) : string
+}
+
+class LocalizationController {
+    - localizationService : LocalizationService
+    - onClickOnChangeLanguage(language : string) : void
+}
+
+LocalizationController *-- LocalizationService
+
+@enduml
