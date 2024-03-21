@@ -25,13 +25,11 @@
   "devDependencies": {
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
-    "selenium-webdriver": "^4.18.1"
+    "selenium-webdriver": "^4.18.1",
+    "sass": "^1.72.0"
   },
   "bugs": {
     "url": "https://github.com/JuilletMikael/RIA-EggFlix/issues"
   },
-  "homepage": "https://github.com/JuilletMikael/RIA-EggFlix#readme",
-  "devDependencies": {
-    "sass": "^1.72.0"
-  }
+  "homepage": "https://github.com/JuilletMikael/RIA-EggFlix#readme"
 }
