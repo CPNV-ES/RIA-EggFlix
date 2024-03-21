@@ -15,27 +15,27 @@ module.exports = class UserExperience{
     }
 
     async clickOnLoginLink(){
-        await this.#getLoginLinkButton().click();
+        (await this.#getLoginLinkButton()).click();
     }
 
     async clickOnEnglishLocalizationButton(){
-        await this.#getEnglishLocalizationButton().click();
+        (await this.#getEnglishLocalizationButton()).click();
     }
 
     async clickOnFrenchLocalizationButton(){
-        await this.#getFrenchLocalizationButton().click();
+        (await this.#getFrenchLocalizationButton()).click();
     }
 
     async clickOnGermanLocalizationButton(){
-        await this.#getGermanLocalizationButton().click();
+        (await this.#getGermanLocalizationButton()).click();
     }
 
     async loginLinkText(){
-        return await this.#getLoginLinkButton().getText();
+        return await (await this.#getLoginLinkButton()).getText();
     }
 
     async clickOnLoginWithFacebook(){
-        await this.#getLoginWithFacebookButton().click();
+        (await this.#getLoginWithFacebookButton()).click();
     }
 
     async releaseDriver(){
@@ -51,11 +51,11 @@ module.exports = class UserExperience{
     }
 
     async isErrorBoxDisplayed() {
-        return await this.#getErrorBox().isDisplayed();
+        return await (await this.#getErrorBox()).isDisplayed();
     }
 
     async getSloganTitleSize(){
-        await this.#getSloganTitle().size();
+        (await this.#getSloganTitle()).size();
     }
 
     executeScript(script){
@@ -63,7 +63,7 @@ module.exports = class UserExperience{
     }
 
     async isErrorBoxDisplayed() {
-        return await this.#getErrorBox().isDisplayed();
+        return await (await this.#getErrorBox()).isDisplayed();
     }
 
     async #getLoginLinkButton(){
