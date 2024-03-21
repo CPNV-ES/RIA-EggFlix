@@ -31,8 +31,5 @@
   "bugs": {
     "url": "https://github.com/JuilletMikael/RIA-EggFlix/issues"
   },
-  "homepage": "https://github.com/JuilletMikael/RIA-EggFlix#readme",
-  "dependencies": {
-    "i18next": "^23.10.1"
-  }
+  "homepage": "https://github.com/JuilletMikael/RIA-EggFlix#readme"
 }

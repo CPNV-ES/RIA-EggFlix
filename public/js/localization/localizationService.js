@@ -1,8 +1,8 @@
-import i18next from 'i18next';
+import i18next from 'https://unpkg.com/i18next@23.10.1/dist/esm/i18next.js';
 
 export default class LocalizationService {
-    async constructor() {
-        await i18next.init({
+    constructor() {
+        i18next.init({
             lng: 'en',
             debug: true,
             resources: {
