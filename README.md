@@ -32,8 +32,14 @@ Install packages
 npm install
 ```
 
-For now, there is no need to build the project.
+We are using [Sass](https://sass-lang.com/) for the site styling. 
+The Scss files in the scss/pigga folder should not be modify ! 
+All overrides should be applied in a scss file and import the file inside app.scss.
+```
+npm run sass
+```
 
+### Tests
 We are using [Jest](https://jestjs.io/) as a testing framework.
 
 This command will run all the tests
