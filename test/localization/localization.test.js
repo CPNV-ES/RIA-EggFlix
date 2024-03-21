@@ -21,7 +21,7 @@ describe('Localization', () => {
             //then
             const loginButtonText = navigator.loginLinkText()
 
-            expect('Anmeldung').toBe(loginButtonText);
+            expect(loginButtonText).toBe('Connexion');
         });
 
         it('should not expand slogan title height size', async () => {
@@ -45,7 +45,8 @@ describe('Localization', () => {
             //then
             const loginButtonText = navigator.loginLinkText()
 
-            expect('Login').toBe(loginButtonText);
+
+            expect(loginButtonText).toBe('Login');
         });
 
         it('should not expand slogan title height size', async () => {
@@ -69,7 +70,7 @@ describe('Localization', () => {
             //then
             const loginButtonText = navigator.loginLinkText()
 
-            expect('Anmeldung').toBe(loginButtonText);
+            expect(loginButtonText).toBe('Anmeldung');
         });
 
         it('should not expand slogan title height size', async () => {
