@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "RIA module, rent online movies.",
   "main": "index.js",
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
   "directories": {
     "doc": "doc"
   },
   "scripts": {
-    "test": "npm test",
+    "test": "jest",
     "sass": "sass --watch --update --style=expanded public/scss/app.scss:public/css/app.css"
   },
   "repository": {
@@ -19,6 +22,11 @@
   ],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "selenium-webdriver": "^4.18.1"
+  },
   "bugs": {
     "url": "https://github.com/JuilletMikael/RIA-EggFlix/issues"
   },
