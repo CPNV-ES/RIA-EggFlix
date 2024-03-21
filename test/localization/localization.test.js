@@ -1,4 +1,4 @@
-import UserExperience from "../userExperience";
+const UserExperience = require("../userExperience");
 
 describe('Localization', () => {
 
