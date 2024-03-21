@@ -18,6 +18,18 @@ module.exports = class UserExperience{
         await this.#getLoginLinkButton().click();
     }
 
+    async clickOnEnglishLocalizationButton(){
+        await this.#getEnglishLocalizationButton().click();
+    }
+
+    async clickOnFrenchLocalizationButton(){
+        await this.#getFrenchLocalizationButton().click();
+    }
+
+    async clickOnGermanLocalizationButton(){
+        await this.#getGermanLocalizationButton().click();
+    }
+
     async loginLinkText(){
         return await this.#getLoginLinkButton().getText();
     }
@@ -30,13 +42,20 @@ module.exports = class UserExperience{
         await this.driver.quit();
     }
 
-
     getLoginRoute(){
         return "login.html";
     }
 
     getHomeRoute(){
         return "index.html";
+    }
+
+    async isErrorBoxDisplayed() {
+        return await this.#getErrorBox().isDisplayed();
+    }
+
+    async getSloganTitleSize(){
+        await this.#getSloganTitle().size();
     }
 
     executeScript(script){
@@ -57,5 +76,21 @@ module.exports = class UserExperience{
 
     async #getErrorBox(){
         return await this.#driver.findElement(By.id('errorBox'));
+    }
+
+    async #getFrenchLocalizationButton(){
+        return await this.#driver.findElement(By.id('frenchLocalizationButton'));
+    }
+
+    async #getGermanLocalizationButton(){
+        return await this.#driver.findElement(By.id('germanLocalizationButton'));
+    }
+
+    async #getEnglishLocalizationButton(){
+        return await this.#driver.findElement(By.id('englishLocalizationButton'));
+    }
+
+    async #getSloganTitle(){
+        return await this.#driver.findElement(By.id('sloganTitle'));
     }
 }
