@@ -58,6 +58,14 @@ module.exports = class UserExperience{
         await this.#getSloganTitle().size();
     }
 
+    executeScript(script){
+        return this.#driver.executeScript(script)
+    }
+
+    async isErrorBoxDisplayed() {
+        return await this.#getErrorBox().isDisplayed();
+    }
+
     async #getLoginLinkButton(){
         return await this.#driver.findElement(By.id('loginButton'));
     }
