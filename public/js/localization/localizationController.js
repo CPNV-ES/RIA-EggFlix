@@ -1,4 +1,4 @@
-import LocalizationService from "./localizationService";
+import LocalizationService from "./localizationService.js";
 
 class LocalizationController {
     #localizationService;
@@ -27,7 +27,10 @@ class LocalizationController {
 
     #translateAllElements() {
         const elements = document.querySelectorAll('[data-translate]');
-        elements.forEach(this.#translateElement);
+        for (let element of elements){
+            this.#translateElement(element);
+        }
+        elements.forEach(()=>this.#translateElement);
     }
 
     #translateElement(element) {
