@@ -10,7 +10,8 @@
     "doc": "doc"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "sass": "sass --watch --update --style=expanded public/scss/app.scss:public/css/app.css"
   },
   "repository": {
     "type": "git",
@@ -29,5 +30,8 @@
   "bugs": {
     "url": "https://github.com/JuilletMikael/RIA-EggFlix/issues"
   },
-  "homepage": "https://github.com/JuilletMikael/RIA-EggFlix#readme"
+  "homepage": "https://github.com/JuilletMikael/RIA-EggFlix#readme",
+  "devDependencies": {
+    "sass": "^1.72.0"
+  }
 }
