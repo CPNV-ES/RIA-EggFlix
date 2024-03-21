@@ -6,6 +6,7 @@ describe('Localization', () => {
     beforeEach(async () => {
         navigator = new UserExperience();
         await navigator.setupDriver();
+        await navigator.goToPage(navigator.getHomeRoute())
     });
 
     afterEach(async () => {
@@ -16,10 +17,10 @@ describe('Localization', () => {
         it('should change login button', async () => {
             //given
             //when
-            navigator.clickOnFrenchLocalizationButton();
+            await navigator.clickOnFrenchLocalizationButton();
 
             //then
-            const loginButtonText = navigator.loginLinkText()
+            const loginButtonText = await navigator.loginLinkText()
 
             expect(loginButtonText).toBe('Connexion');
         });
@@ -27,10 +28,10 @@ describe('Localization', () => {
         it('should not expand slogan title height size', async () => {
             //given
             //when
-            navigator.clickOnFrenchLocalizationButton();
+            await navigator.clickOnFrenchLocalizationButton();
 
             //then
-            const sloganTitleSize = navigator.getSloganTitleSize()
+            const sloganTitleSize = await navigator.getSloganTitleSize()
 
             expect(sloganTitleSize.height).toBeGreaterThan(40);
         });
@@ -40,10 +41,10 @@ describe('Localization', () => {
         it('should change login button', async () => {
             //given
             //when
-            navigator.clickOnEnglishLocalizationButton();
+            await navigator.clickOnEnglishLocalizationButton();
 
             //then
-            const loginButtonText = navigator.loginLinkText()
+            const loginButtonText = await navigator.loginLinkText()
 
 
             expect(loginButtonText).toBe('Login');
@@ -52,10 +53,10 @@ describe('Localization', () => {
         it('should not expand slogan title height size', async () => {
             //given
             //when
-            navigator.clickOnEnglishLocalizationButton();
+            await navigator.clickOnEnglishLocalizationButton();
 
             //then
-            const sloganTitleSize = navigator.getSloganTitleSize()
+            const sloganTitleSize = await navigator.getSloganTitleSize()
 
             expect(sloganTitleSize.height).toBeGreaterThan(40);
         });
@@ -65,10 +66,10 @@ describe('Localization', () => {
         it('should change login button', async () => {
             //given
             //when
-            navigator.clickOnGermanLocalizationButton();
+            await navigator.clickOnGermanLocalizationButton();
 
             //then
-            const loginButtonText = navigator.loginLinkText()
+            const loginButtonText = await navigator.loginLinkText()
 
             expect(loginButtonText).toBe('Anmeldung');
         });
@@ -76,10 +77,10 @@ describe('Localization', () => {
         it('should not expand slogan title height size', async () => {
             //given
             //when
-            navigator.clickOnGermanLocalizationButton();
+            await navigator.clickOnGermanLocalizationButton();
 
             //then
-            const sloganTitleSize = navigator.getSloganTitleSize()
+            const sloganTitleSize = await navigator.getSloganTitleSize()
 
             expect(sloganTitleSize.height).toBeGreaterThan(40);
         });
