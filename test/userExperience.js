@@ -39,7 +39,13 @@ module.exports = class UserExperience{
     }
 
     async releaseDriver(){
-        await this.driver.quit();
+        this.#driver.close();
+        // Some browser's only close with "quit" method, if the "close" don't work try to use "quit"
+        try{
+            this.#driver.quit();
+        }catch (error){
+            console.log("Browser closed already, " + "did not need to quit after all");
+        }
     }
 
     getLoginRoute(){
