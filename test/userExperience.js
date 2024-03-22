@@ -10,8 +10,8 @@ module.exports = class UserExperience{
         await this.#driver.get("file://" + process.cwd() + "/public/"+pageName);
     }
 
-    currentRoute(){
-        return this.#driver.current_url;
+    async currentRoute(){
+        return await this.#driver.getCurrentUrl();
     }
 
     async clickOnLoginLink(){
