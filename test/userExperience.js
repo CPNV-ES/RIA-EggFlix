@@ -15,7 +15,7 @@ module.exports = class UserExperience{
     }
 
     async clickOnLoginLink(){
-        await this.#getLoginLinkButton().click();
+        (await this.#getLoginLinkButton()).click();
     }
 
     async clickOnEnglishLocalizationButton(){
@@ -31,11 +31,11 @@ module.exports = class UserExperience{
     }
 
     async loginLinkText(){
-        return await this.#getLoginLinkButton().getText();
+        return (await this.#getLoginLinkButton()).getText();
     }
 
     async clickOnLoginWithFacebook(){
-        await this.#getLoginWithFacebookButton().click();
+        await (this.#getLoginWithFacebookButton()).click();
     }
 
     async releaseDriver(){
