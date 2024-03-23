@@ -1,13 +1,15 @@
 const {Builder, By, Key, until} = require("selenium-webdriver");
+const {delayed} = require("selenium-webdriver/lib/promise");
 
 module.exports = class UserExperience{
     #driver;
+    #publlicFolder = "file://" + process.cwd() + "/public/"
     async setupDriver() {
         this.#driver = await new Builder().forBrowser('chrome').build();
     }
 
     async goToPage(pageName) {
-        await this.#driver.get("file://" + process.cwd() + "/public/"+pageName);
+        await this.#driver.get(this.getPublicFolder() + pageName);
     }
 
     async currentRoute(){
@@ -56,6 +58,10 @@ module.exports = class UserExperience{
         return "index.html";
     }
 
+    getPublicFolder() {
+        return this.#publlicFolder;
+    }
+
     async isErrorBoxDisplayed() {
         return await this.#getErrorBox().isDisplayed();
     }
@@ -70,6 +76,10 @@ module.exports = class UserExperience{
 
     async isErrorBoxDisplayed() {
         return await this.#getErrorBox().isDisplayed();
+    }
+
+    async delay1s() {
+        await delayed(1000);
     }
 
     async #getLoginLinkButton(){
