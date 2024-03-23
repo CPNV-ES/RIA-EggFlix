@@ -3,13 +3,13 @@ const {delayed} = require("selenium-webdriver/lib/promise");
 
 module.exports = class UserExperience{
     #driver;
-    #publlicFolder = "file://" + process.cwd() + "/public/"
+    #ServerAddress = "http://localhost:8080/"
     async setupDriver() {
         this.#driver = await new Builder().forBrowser('chrome').build();
     }
 
     async goToPage(pageName) {
-        await this.#driver.get(this.getPublicFolder() + pageName);
+        await this.#driver.get(this.getServerAddress() + pageName);
     }
 
     async currentRoute(){
@@ -37,7 +37,7 @@ module.exports = class UserExperience{
     }
 
     async clickOnLoginWithFacebook(){
-        await (this.#getLoginWithFacebookButton()).click();
+        (await this.#getLoginWithFacebookButton()).click();
     }
 
     async releaseDriver(){
@@ -58,8 +58,8 @@ module.exports = class UserExperience{
         return "index.html";
     }
 
-    getPublicFolder() {
-        return this.#publlicFolder;
+    getServerAddress() {
+        return this.#ServerAddress;
     }
 
     async isErrorBoxDisplayed() {
