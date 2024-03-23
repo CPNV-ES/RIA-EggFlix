@@ -19,7 +19,7 @@ describe('Login Story', () => {
         it('should go to login page', async () => {
             //Given (index page)
             await navigator.goToPage(navigator.getHomeRoute());
-            const expectedRoute =  normalize(navigator.getPublicFolder() + navigator.getLoginRoute());
+            const expectedRoute =  normalize(navigator.getServerAddress() + navigator.getLoginRoute());
 
             //When
             await navigator.clickOnLoginLink();
@@ -33,10 +33,13 @@ describe('Login Story', () => {
         it('should log the user in (redirect and show the new login button)', async () => {
             //Given (index page)
             await navigator.goToPage(navigator.getLoginRoute());
+            const expectedRoute =  normalize(navigator.getServerAddress() + navigator.getHomeRoute());
+
             //When
             await navigator.clickOnLoginWithFacebook();
             //Then
-            expect(navigator.currentRoute()).toBe(navigator.getHomeRoute());
+            await navigator.delay1s();
+            expect(normalize(await navigator.currentRoute())).toBe(expectedRoute);
             expect(await navigator.loginLinkText()).toBe("Logout");
         });
 
@@ -51,7 +54,7 @@ describe('Login Story', () => {
                 //When
                 await navigator.clickOnLoginWithFacebook();
                 //Then
-                expect(navigator.currentRoute()).toBe(navigator.getLoginRoute());
+                expect(normalize(await navigator.currentRoute())).toBe(navigator.getLoginRoute());
                 expect(navigator.isErrorBoxDisplayed()).toBe(true);
             });
         });
@@ -65,7 +68,7 @@ describe('Login Story', () => {
             //When
             await navigator.clickOnLoginLink();
             //Then
-            expect(navigator.currentRoute()).toBe(navigator.getHomeRoute());
+            expect(normalize(await navigator.currentRoute())).toBe(navigator.getHomeRoute());
             expect(await navigator.loginLinkText()).toBe("Login");
         });
     });
