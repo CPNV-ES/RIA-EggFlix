@@ -1,4 +1,5 @@
 const UserExperience = require("../userExperience");
+const {delayed} = require("selenium-webdriver/lib/promise");
 
 describe('Login Story', () => {
 
@@ -20,7 +21,8 @@ describe('Login Story', () => {
             //When
             await navigator.clickOnLoginLink();
             //Then
-            expect(navigator.currentRoute()).toBe(navigator.getLoginRoute());
+            await navigator.delay1s()
+            expect(await navigator.currentRoute()).toBe(navigator.getPublicFolder() + navigator.getLoginRoute());
         });
     });
 
