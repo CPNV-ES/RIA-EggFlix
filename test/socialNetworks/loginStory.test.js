@@ -1,5 +1,6 @@
 const UserExperience = require("../userExperience");
 const {delayed} = require("selenium-webdriver/lib/promise");
+const {normalize} = require("path");
 
 describe('Login Story', () => {
 
@@ -18,11 +19,13 @@ describe('Login Story', () => {
         it('should go to login page', async () => {
             //Given (index page)
             await navigator.goToPage(navigator.getHomeRoute());
+            const expectedRoute =  normalize(navigator.getPublicFolder() + navigator.getLoginRoute());
+
             //When
             await navigator.clickOnLoginLink();
             //Then
             await navigator.delay1s()
-            expect(await navigator.currentRoute()).toBe(navigator.getPublicFolder() + navigator.getLoginRoute());
+            expect(normalize(await navigator.currentRoute())).toBe(expectedRoute);
         });
     });
 
