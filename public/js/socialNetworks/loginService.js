@@ -5,10 +5,7 @@ export default class LoginService{
     }
 
     async login(serviceName){
-
-        this.#socialNetworksLogin.forEach(async (social) => {
-            if (serviceName === social.getSocialNetworkName()) await social.login()
-        })
+        await this.#findSocialLoginByName(serviceName).login()
     }
 
     async isConnectedToAny(){
@@ -17,5 +14,11 @@ export default class LoginService{
 
     async logoutFromAll(){
 
+    }
+
+    async #findSocialLoginByName(serviceName) {
+        this.#socialNetworksLogin.forEach(async (social) => {
+            if (serviceName === social.getSocialNetworkName()) return social
+        })
     }
 }
