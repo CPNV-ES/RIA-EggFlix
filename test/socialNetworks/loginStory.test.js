@@ -1,6 +1,7 @@
 const UserExperience = require("../userExperience");
 const {delayed} = require("selenium-webdriver/lib/promise");
 const {normalize} = require("path");
+const FB = require("./facebookSdkStub");
 
 describe('Login Story', () => {
 
@@ -8,6 +9,7 @@ describe('Login Story', () => {
     beforeEach(async () => {
         navigator = new UserExperience();
         await navigator.setupDriver();
+        global.FB = FB;
         //TODO : Mock APIs
     });
 

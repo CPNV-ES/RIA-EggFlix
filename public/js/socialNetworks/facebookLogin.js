@@ -6,7 +6,7 @@ module.exports = class FacebookLogin {
 
     }
     async login(){
-
+        FB.login()
     }
     async logout(){
 

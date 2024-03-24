@@ -1,4 +1,4 @@
-export default class LoginService{
+module.exports = class LoginService{
     #socialNetworksLogin
     constructor(socialLoginList) {
         this.#socialNetworksLogin = socialLoginList;
