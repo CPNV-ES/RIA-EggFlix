@@ -49,7 +49,7 @@ describe('Login Story', () => {
                 await navigator.goToPage(navigator.getLoginRoute());
                 navigator.executeScript(()=>{
                     //Set the mock to send error response
-                    FB.isStubWorking = false
+                    FB.isStubWorking = false    //TODO : FB is not define
                 })
                 //When
                 await navigator.clickOnLoginWithFacebook();

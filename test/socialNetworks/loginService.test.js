@@ -4,7 +4,7 @@ const FB = require("./facebookSdkStub.js");
 
 describe('Login Service', () => {
     beforeEach(() => {
-        global.FB = FB;
+        global.FB = new FB;
     });
     describe('when login with facebook', () => {
         it('should be connected', async () => {
