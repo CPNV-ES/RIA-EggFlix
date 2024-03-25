@@ -24,7 +24,7 @@ module.exports = class FacebookLogin {
                 if (response.status === 'connected') {
                     resolve(response)
                 } else {
-                    reject(Error(response))
+                    reject(new Error(response))
                 }
             });
         });
@@ -36,7 +36,7 @@ module.exports = class FacebookLogin {
             });
         });
     }
-    async getSocialNetworkName(){
+    getSocialNetworkName(){
         return "facebook"
     }
 }

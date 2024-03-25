@@ -1,13 +1,16 @@
-module.exports = class LoginService{
+export default class LoginService{
     #socialNetworksLogin
     constructor(socialLoginList) {
         this.#socialNetworksLogin = socialLoginList;
     }
 
     async login(serviceName){
-        const temp = await this.#findSocialLoginByName(serviceName)
-        console.log("hahah");
-        await temp.login();
+         try {
+             await this.#findSocialLoginByName(serviceName).login();
+         }
+         catch (e) {
+
+         }
     }
 
     async isConnectedToAny(){
@@ -21,9 +24,9 @@ module.exports = class LoginService{
 
     }
 
-    async #findSocialLoginByName(serviceName) {
+    #findSocialLoginByName(serviceName) {
         for (const social of this.#socialNetworksLogin) {
-            if (serviceName === await social.getSocialNetworkName()) return social;
+            if (serviceName === social.getSocialNetworkName()) return social;
         }
     }
 }
