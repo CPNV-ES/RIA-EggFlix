@@ -3,13 +3,14 @@ const {delayed} = require("selenium-webdriver/lib/promise");
 
 module.exports = class UserExperience{
     #driver;
-    #ServerAddress = "http://localhost:8080/"
+    #serverAddress = "http://localhost:8080/"
     async setupDriver() {
         this.#driver = await new Builder().forBrowser('chrome').build();
     }
 
     async goToPage(pageName) {
         await this.#driver.get(this.getServerAddress() + pageName);
+        await this.delay1s();
     }
 
     async currentRoute(){
@@ -59,7 +60,7 @@ module.exports = class UserExperience{
     }
 
     getServerAddress() {
-        return this.#ServerAddress;
+        return this.#serverAddress;
     }
 
     async isErrorBoxDisplayed() {
