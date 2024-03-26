@@ -68,7 +68,7 @@ module.exports = class UserExperience{
     }
 
     async getSloganTitleSize(){
-        (await this.#getSloganTitle()).size();
+        return (await (await this.#getSloganTitle()).getRect())
     }
 
     executeScript(script){
