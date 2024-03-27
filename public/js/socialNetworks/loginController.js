@@ -1,11 +1,10 @@
 import LoginService from "./loginService.js";
 import FacebookLogin from "./facebookLogin.js";
-//const FB = require("../../../test/socialNetworks/facebookSdkStub.js"); //How do I use this ?
 
 class LoginController {
-    #service; //why should it be an array on the diagram ?
+    #service;
 
-    constructor(loginService) { //so we don't show constructor in our diagram ?
+    constructor(loginService) {
         this.#service = loginService;
         this.onClickOnLoginLink();
         this.onClickOnLoginButton();
@@ -19,11 +18,14 @@ class LoginController {
 
     async onClickOnLoginButton(serviceName) {
 
+        if (await this.#service.isConnectedToAny()) {
+            await this.#service.logoutFromAll();
+        }
+
         document.getElementById("loginFacebook").addEventListener(
             'click',
             async () => {
-
-                const login = await this.#service.login(serviceName)
+                const login = await this.#service.login(serviceName);
                 if (login.status !== "connected") {
                     const errorBox = document.getElementById('errorBox');
                     errorBox.innerText = 'We cannot connect you, please try again later.';

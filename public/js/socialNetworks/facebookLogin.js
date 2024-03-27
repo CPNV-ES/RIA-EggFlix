@@ -7,7 +7,7 @@ window.fbAsyncInit = function () {
     })
 };
 
-module.exports = class FacebookLogin {
+export default class FacebookLogin {
     constructor() {
 
     }

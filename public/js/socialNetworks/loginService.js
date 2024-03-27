@@ -21,7 +21,9 @@ export default class LoginService{
     }
 
     async logoutFromAll(){
-
+        for (const social of this.#socialNetworksLogin) {
+            social.logout();
+        }
     }
 
     #findSocialLoginByName(serviceName) {
