@@ -8,26 +8,31 @@ class LoginController {
     constructor(loginService) { //so we don't show constructor in our diagram ?
         this.#service = loginService;
         this.onClickOnLoginLink();
+        this.onClickOnLoginButton();
     }
 
-    onClickOnLoginLink() {
-        document.getElementById("loginFacebook").addEventListener(
-            'click',
-            () => { this.onClickOnLoginButton('facebook') }
-        )
+    async onClickOnLoginLink() {
+        if (await this.#service.isConnectedToAny()) {
+            document.querySelector("#loginButton").textContent = "Logout"
+        }
     }
 
     async onClickOnLoginButton(serviceName) {
 
-        const login = await this.#service.login(serviceName)
-        if (login.status != "connected") {
-            const errorBox = document.getElementById('errorBox');
-            errorBox.innerText = 'We cannot connect you, please try again later.';
-            errorBox.classList.add("d-block")
-        }
-        window.location.href = 'index.html';
-        // TODO: ask how we can do : document.getElementById("loginButton").innerHTML = "logout";
+        document.getElementById("loginFacebook").addEventListener(
+            'click',
+            async () => {
+
+                const login = await this.#service.login(serviceName)
+                if (login.status !== "connected") {
+                    const errorBox = document.getElementById('errorBox');
+                    errorBox.innerText = 'We cannot connect you, please try again later.';
+                    errorBox.classList.add("d-block")
+                }
+                window.location.href = 'index.html';
+            }
+        )
     }
 }
 
-new LoginController(new LoginService([ new FacebookLogin()])); //is this legit ?
+new LoginController(new LoginService([ new FacebookLogin()]));
