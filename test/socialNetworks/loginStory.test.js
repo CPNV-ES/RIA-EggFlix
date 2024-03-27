@@ -1,4 +1,7 @@
-import UserExperience from "../userExperience";
+const UserExperience = require("../userExperience");
+const {delayed} = require("selenium-webdriver/lib/promise");
+const {normalize} = require("path");
+const FB = require("./facebookSdkStub");
 
 describe('Login Story', () => {
 
@@ -6,6 +9,7 @@ describe('Login Story', () => {
     beforeEach(async () => {
         navigator = new UserExperience();
         await navigator.setupDriver();
+        global.FB = FB;
         //TODO : Mock APIs
     });
 
@@ -17,10 +21,13 @@ describe('Login Story', () => {
         it('should go to login page', async () => {
             //Given (index page)
             await navigator.goToPage(navigator.getHomeRoute());
+            const expectedRoute =  normalize(navigator.getServerAddress() + navigator.getLoginRoute());
+
             //When
             await navigator.clickOnLoginLink();
             //Then
-            expect(navigator.currentRoute()).toBe(navigator.getLoginRoute());
+            await navigator.delay1s()
+            expect(normalize(await navigator.currentRoute())).toBe(expectedRoute);
         });
     });
 
@@ -28,10 +35,13 @@ describe('Login Story', () => {
         it('should log the user in (redirect and show the new login button)', async () => {
             //Given (index page)
             await navigator.goToPage(navigator.getLoginRoute());
+            const expectedRoute =  normalize(navigator.getServerAddress() + navigator.getHomeRoute());
+
             //When
             await navigator.clickOnLoginWithFacebook();
             //Then
-            expect(navigator.currentRoute()).toBe(navigator.getHomeRoute());
+            await navigator.delay1s();
+            expect(normalize(await navigator.currentRoute())).toBe(expectedRoute);
             expect(await navigator.loginLinkText()).toBe("Logout");
         });
 
@@ -41,12 +51,12 @@ describe('Login Story', () => {
                 await navigator.goToPage(navigator.getLoginRoute());
                 navigator.executeScript(()=>{
                     //Set the mock to send error response
-                    FB.isStubWorking = false
+                    FB.isStubWorking = false    //TODO : FB is not define
                 })
                 //When
                 await navigator.clickOnLoginWithFacebook();
                 //Then
-                expect(navigator.currentRoute()).toBe(navigator.getLoginRoute());
+                expect(normalize(await navigator.currentRoute())).toBe(navigator.getLoginRoute());
                 expect(navigator.isErrorBoxDisplayed()).toBe(true);
             });
         });
@@ -60,7 +70,7 @@ describe('Login Story', () => {
             //When
             await navigator.clickOnLoginLink();
             //Then
-            expect(navigator.currentRoute()).toBe(navigator.getHomeRoute());
+            expect(normalize(await navigator.currentRoute())).toBe(navigator.getHomeRoute());
             expect(await navigator.loginLinkText()).toBe("Login");
         });
     });

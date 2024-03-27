@@ -1,4 +1,4 @@
-module.exports = class FacebookLogin {
+export default class FacebookLogin {
     constructor() {
         document.addEventListener("DOMContentLoaded", function() {
             // <!-- FB SDK LOAD START -->
@@ -22,27 +22,31 @@ module.exports = class FacebookLogin {
         });
     }
     async isConnected(){
-
+        return new Promise((resolve, reject) => {
+            FB.getLoginStatus(function(response) {
+                resolve(response.status);
+            });
+        });
     }
     async login(){
-        FB.login(function (response) {
-            if (response.authResponse) {
-                // Get and display the user profile data
-                getFbUserData();
-            } else {
-                document.getElementById('status').innerHTML = 'User cancelled login or did not fully authorize.';
-            }
-        }, {scope: 'email'});
+        return new Promise((resolve, reject) => {
+            FB.login(function(response) {
+                if (response.status === 'connected') {
+                    resolve(response)
+                } else {
+                    reject(new Error(response))
+                }
+            });
+        });
     }
     async logout(){
-        FB.logout(function() {
-            document.getElementById('fbLink').setAttribute("onclick","fbLogin()");
-            document.getElementById('fbLink').innerHTML = '<img src="images/fb-login-btn.png"/>';
-            document.getElementById('userData').innerHTML = '';
-            document.getElementById('status').innerHTML = '<p>You have successfully logout from Facebook.</p>';
+        return new Promise((resolve, reject) => {
+            FB.logout(function(response) {
+
+            });
         });
     }
     getSocialNetworkName(){
-
+        return "facebook"
     }
 }
