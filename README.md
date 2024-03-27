@@ -64,6 +64,7 @@ update it with your environment's values.
 │   ├───css
 │   ├───imgs
 │   ├───js                  //Our JS source files
+│       ├───locales         //Our JS localization files (name following the ISO 639-1 standard)
 │   └───vendors             //Third party JS
 ├───test                    //Test classes
 ├───package.json            //Describe the project dependendies
