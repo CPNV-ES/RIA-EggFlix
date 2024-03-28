@@ -7,8 +7,6 @@ Class Diagram for the localization system for EggFlix
 
 class LocalizationService {
     - language : string
-    + getLanguage() : string
-    + setLanguage() : void
     + changeLanguage(language : string) : void
     + translate(translateValue : string) : string
 }
