@@ -16,3 +16,12 @@
     text-decoration: none;
   }
 }
+
+.header .overlay .title{
+  font-size: 5vw;
+  white-space: nowrap;
+  display: inline-block;
+  max-width: 90vw;
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
