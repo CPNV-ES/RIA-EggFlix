@@ -78,8 +78,9 @@ update it with your environment's values.
   * [How to commit](https://www.conventionalcommits.org/en/v1.0.0/)
   * [How to use your workflow](https://nvie.com/posts/a-successful-git-branching-model/)
 
-  * Propose a new feature in [icescrum](https://icescrum.cpnv.ch/p/RIAEGGFLIX/#/planning) 
+  * Propose a new feature in [icescrum](https://icescrum.cpnv.ch/p/RIA1EGGFIX/#/project)
     * We only use technical stories
+  * Documentation of the project [wiki](https://github.com/CPNV-RIA1/RIA-EggFlix/wiki)
   * Pull requests are open to merge in the develop branch.
   * Release on the main branch we use GitFlow and not with GitHub release.
   * Issues are added to the [github issues page](https://github.com/JuilletMikael/RIA-EggFlix/issues)
