@@ -6,16 +6,17 @@ class LocalizationController {
     constructor(localizationService) {
         this.#localizationService = localizationService;
         this.#registerLangButtonsCallbacks();
+        this.#translateAllElements();
     }
 
     #registerLangButtonsCallbacks(){
-        document.getElementById('frenchLocalizationButton').addEventListener("click", ()=> {
+        document.getElementById('frenchLocalizationButton')?.addEventListener("click", ()=> {
             this.#onClickOnChangeLanguage("fr");
         });
-        document.getElementById('germanLocalizationButton').addEventListener("click", ()=> {
+        document.getElementById('germanLocalizationButton')?.addEventListener("click", ()=> {
             this.#onClickOnChangeLanguage("de");
         });
-        document.getElementById('englishLocalizationButton').addEventListener("click", ()=> {
+        document.getElementById('englishLocalizationButton')?.addEventListener("click", ()=> {
             this.#onClickOnChangeLanguage("en");
         });
     }

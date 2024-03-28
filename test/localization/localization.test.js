@@ -13,6 +13,13 @@ describe('Localization', () => {
         await navigator.releaseDriver();
     });
 
+    /*
+    TODO :
+     Given UserExperience
+     When going to the login page (doesn't have buttons languages buttons),
+     Then we should'nt have any errors in the console (null or undefined refs)
+     */
+
     describe('when change language in french', () => {
         it('should change login button', async () => {
             //given
