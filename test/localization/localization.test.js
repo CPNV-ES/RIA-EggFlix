@@ -33,7 +33,7 @@ describe('Localization', () => {
             //then
             const sloganTitleSize = await navigator.getSloganTitleSize()
 
-            expect(sloganTitleSize.height).toBeGreaterThan(40);
+            expect(sloganTitleSize.height).toBeLessThanOrEqual(69);
         });
     })
 
@@ -58,7 +58,7 @@ describe('Localization', () => {
             //then
             const sloganTitleSize = await navigator.getSloganTitleSize()
 
-            expect(sloganTitleSize.height).toBeGreaterThan(40);
+            expect(sloganTitleSize.height).toBeLessThanOrEqual(69);
         });
     })
 
@@ -82,7 +82,7 @@ describe('Localization', () => {
             //then
             const sloganTitleSize = await navigator.getSloganTitleSize()
 
-            expect(sloganTitleSize.height).toBeGreaterThan(40);
+            expect(sloganTitleSize.height).toBeLessThanOrEqual(69);
         });
     })
 
